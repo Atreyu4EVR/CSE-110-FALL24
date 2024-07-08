@@ -1,0 +1,21 @@
+# List of Helpful Terminal Commands
+
+## Virtual Environments
+python3 -m venv venv # create virtual environment in project directory
+
+source venv/bin/activate # activate for macOS
+
+.\venv\Scripts\activate # activate for Windows
+
+## Path Helpers
+cd / .. # used to go exit paths
+cd /enter/path/here # used to go right to you folder/file path
+
+## Python Install Commands
+pip install -r requirements.txt # used to install the libraries listed in the requirements.txt file
+
+pip install --upgrade pip # used to upgrade PIP to latest version
+
+pip install {enter library name}
+
+pip-review --auto # automatically updates outdates libraries
