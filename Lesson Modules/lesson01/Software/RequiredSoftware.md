@@ -1,6 +1,5 @@
 ![Python](https://img.shields.io/badge/Python-3.12-purple)
 
-
 # Required Softwaare
 
 The following software will be required for this course.
