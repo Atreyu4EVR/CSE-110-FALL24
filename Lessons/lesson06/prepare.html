@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../site/style.css" />
+    <title>CSE 110 - Course Materials</title>
+</head>
+<body>
+    <header id="courseTitle">
+        <span class="icon-byui-logo"></span>
+        <h1>CSE 110 | Programming Building Blocks</h1>
+    </header>
+    <article>
+        <h1>06 Prepare: Preparation Material</h1>
+
+        <h2>Overview</h2>
+        <p>In this lesson, you will continue practicing working with <code>if</code> statements, using even more complicated programs and logic.</p>
+
+        <h2>Preparation Material</h2>
+        <p>Watch the following videos:</p>
+
+        <ul>
+
+            <li><p><a href="https://www.youtube.com/watch?v=IBOHc87yFYw&list=PLlrxD0HtieHhS8VzuMCfQD4uJ9yne1mE6&index=23" target="_blank">Complex Condition Checks</a> (4 mins)</p></li>
+            <li><p><a href="https://www.youtube.com/watch?v=Iui6K2STtbA&list=PLlrxD0HtieHhS8VzuMCfQD4uJ9yne1mE6&index=24" target="_blank">Demo: Complex Conditions</a> (8 mins)</p></li>
+        </ul>
+
+        <h3>Testing Multiple Conditions</h3>
+        <p>As shown, you can combine two conditions with <code>and</code> and <code>or</code>:</p>
+
+<pre><code class="python">
+if x > 5 and y > 10:
+    # This happens if both conditions are true
+
+if x > 5 or y > 10:
+    # This happens if either one of the conditions (or both!) are true
+</code></pre>
+
+        <p>And you can mix and match any expressions that evaluate to true:</p>
+
+<pre><code class="python">
+if x > 5 and y > 10 and word == "taco":
+    # This happens if all three conditions are true
+</code></pre>
+
+        <p>Just as mathematical operators have precedence rules where <code>*</code> happens before <code>+</code>, the <code>and</code> condition takes precedence over the <code>or</code> condition, so if you want to mix them and have the or condition happen first, you need to use parentheses:</p>
+
+
+<pre><code class="python">
+if (x > 5 or x < -5) and y > 10:
+    # In this case, x can either be greater than 5 or less than negative 5, and y must
+    # always be greater than 10
+
+if x > 5 or x < -5 and y > 10:
+    # Without parentheses, the x < -5 and y > 10 conditions go together and both must be
+    # true, unless x > 5, in which case the whole statement is true
+</code></pre>
+
+        <p>Sometimes, these can get a little confusing, so it is a good idea to use parentheses in complicated expressions, to make it clear what you intend to happen.</p>
+
+        <h3>Testing Multiple Similar Conditions</h3>
+        <p>It is common to want to test the same variable for two conditions, or to test two variables against the same condition. In these cases, you may be tempted to leave part out, but this will not work, anytime you use operators like <code>&gt;</code> or <code>==</code>, you must provide both a left and a right hand side for it.</p>
+
+<pre><code class="python">
+# To check if x is either 5 or 6, you might be tempted to write:
+if x == 5 or 6:
+    # INCORRECT: This does not work!
+
+# You must write them both out:
+if x == 5 or x == 6:
+    # This is the correct way to check
+</code></pre>        
+
+<pre><code class="python">
+# To check if either first_name or last_name is Scott you might be tempted to write:
+if first_name or last_name == "Scott":
+    # INCORRECT: This does not work!
+
+# You must write them both out:
+if first_name == "Scott" or last_name == "Scott":
+    # This is the correct way to check
+</code></pre>        
+
+    <h3>True and False values</h3>
+    <p>In addition to comparing against other variables, you can also set a variable itself to be a <code>True</code> or <code>False</code>. To this point, we have learned about the variable types of int, float, and string. Variables that are either true or false are a new data type called Boolean variables (named after a mathematician, George Boole).</p>
+
+    <p>You can set a boolean variable directly, such as <code>is_hot = True</code> or <code>is_hot = False</code>. Notice that you must always use a capital T on True and a capital F on False.</p>
+
+    <p>Because these variables are already either true or false, you don't need to compare them against another value. For example:</p>
+
+<pre><code class="python">
+is_hot = True
+
+# You can check the value of the variable directly
+if is_hot:
+    print("It's hot")
+
+# It works, but is redundant (and therefore bad practice) to check if it is True:
+if is_hot == True:
+    print("It's hot")
+</code></pre> 
+
+    <p>You can check if a boolean variable is not true with the <code>not</code> keyword:</p>
+
+<pre><code class="python">
+is_hot = True
+
+# Using the "not" keyword
+if not is_hot:
+    print("It is not hot")
+
+# It works, but is generally avoided to check if it is false:
+if is_hot == False:
+    print("It is not hot")
+</code></pre> 
+
+    <p>Boolean variables are typically named with words that indicate that it will only have two values, and help you understand what true means. For example, if you want to have a boolean variable that determines whether someone is an adult, you would typically choose a name of <code>is_adult</code> rather than <code>age</code> or even <code>adult</code>.</p>
+    <p>Common boolean variable names are <code>is_xxx</code>, <code>has_xxx</code>, <code>can_xxx</code>, etc.</p>
+
+    </article>
+
+    <script src="../site/js/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

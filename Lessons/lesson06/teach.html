@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../site/style.css" />
+    <title>CSE 110 - Course Materials</title>
+</head>
+<body>
+    <header id="courseTitle">
+        <span class="icon-byui-logo"></span>
+        <h1>CSE 110 | Programming Building Blocks</h1>
+    </header>
+    <article>
+        <h1>06 Teach: Team Activity</h1>
+        <heading class="subtitle">Amusement Park Rides</heading>
+
+        <h2>Overview</h2>
+        <p>For this assignment, you'll work as a team to write a program for a fictitious amusement park ride.</p>
+
+        <h3>The Scenario: Rider Requirements</h3>
+        <p>The local amusement park has just installed a new ride. Because of its speed and extreme twists and turns, it has very strict requirements for the riders, especially as it pertains to children or other shorter riders.</p>
+
+        <p>To help the ride attendants follow the rules, you've been asked to write an app to help them know if the riders are acceptable for the car.</p>
+
+        <p>The basic rules are as follows:</p>
+
+        <ol>
+            <li><p>No one under 36 inches may ever ride, either by themselves or with another rider.</p></li>
+            <li><p>Normally, two riders sit in the car together. A single rider can only ride if they are at least 18 years old and are at least 62 inches tall.</p></li>
+            <li><p>If there are two riders and one of them is at least 18 years old, they may ride together.</p></li>
+        </ol>
+
+        <h2>Assignment</h2>
+        <p>Implement the ride requirements defined above. Your program should prompt for the riders' ages and heights, and then display a message indicating whether they can ride or not.</p>
+
+        <h3>Core Requirements</h3>
+        <ol>
+            <li><p>Prompt the user for the age and height of the first person. Then, ask whether there is a second rider, and if so, ask for their age and height.</p></li>
+            <li><p>Handle the case of a single rider.</p></li>
+            <li><p>Finish implementing the basic rules.</p></li>
+        </ol>
+
+        <p>An example run of the program may look as follows:</p>
+<pre><code class="plaintext">
+What is the age of the first rider? 12
+What is the height of the first rider? 46
+Is there a second rider (yes/no)? no
+Sorry, you may not ride.
+</code></pre>
+
+        <p>Another example may look as follows:</p>
+
+<pre><code class="plaintext">
+What is the age of the first rider? 82
+What is the height of the first rider? 75
+Is there a second rider (yes/no)? yes
+What is the age of the second rider? 14
+What is the height of the second rider? 35
+Sorry, you may not ride.
+</code></pre>
+
+        <p>And a final example:</p>
+
+<pre><code class="plaintext">
+What is the age of the first rider? 82
+What is the height of the first rider? 75
+Is there a second rider (yes/no)? yes
+What is the age of the second rider? 14
+What is the height of the second rider? 36
+Welcome to the ride. Please be safe and have fun!
+</code></pre>
+
+        <h3>Stretch Challenge</h3>
+
+        <p>In addition to the basic rules, the amusement park has added the following. Please implement each one for the stretch challenges:</p>
+
+        <ol>
+            <li><p>If there are two riders, but neither one is at least 18 years old, they may still ride as long as they are both at least 12 years old and at least 52 inches tall.</p></li>
+            <li><p>If a person is age 12&ndash;17, ask if that person has a golden passport. If they do, they should be treated as if they were 18 years old for the sake of all rules. (Don't forget to apply this to the single rider case.)</p></li>
+            <li><p>If there are two riders, but neither one is at least 18 years old, they may still ride if one rider is at least 16 years old and the other is at least 14. (Keep in mind that the first rider may be the younger of the two or they may be the older of the two.)</p></li>
+        </ol>
+
+        <p>Whew! That's complicated! Now you see why they need an app.</p>
+
+        <h2>Sample Solution</h2>
+        <p>When your program is finished, please view the sample solution for this program to compare it to your approach.</p>
+
+        <p>You should work to complete this team activity for the one hour period first, without looking at the sample solution. However, if you have worked on it for at least an hour and are still having problems, you may feel free to use the sample solution to help you finish your program.</p>
+
+        <ul>
+            <li><p>Sample solution (Core requirements): <a href="./teach06_sample_py.html" target="_blank">teach06_sample.py</a></p></li>
+            <li><p>Sample solution (Stretch challenges): <a href="./teach06_stretch_sample_py.html" target="_blank">teach06_stretch_sample.py</a></p></li>
+        </ul>
+
+        <h2>Submission</h2>
+        <p>When complete, please report your progress in the associated I-Learn quiz.</p>
+        <p>If you decided to do additional work on the program after your team activity, either by yourself or with others, feel free to include that additional work when you report on your progress in I-Learn.</p>
+
+    </article>
+
+    <script src="../site/js/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+ 
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../site/style.css" />
+    <title>CSE 110 - Course Materials</title>
+</head>
+<body>
+    <header id="courseTitle">
+        <span class="icon-byui-logo"></span>
+        <h1>CSE 110 | Programming Building Blocks</h1>
+    </header>
+    <article>
+        <h1>10 Teach: Team Activity</h1>
+        <heading class="subtitle">Multiple Lists</heading>
+
+        <h2>Instructions</h2>
+        <p>Help your teammates complete the following programming assignment.</p>
+
+        <h2>Overview</h2>
+        <p>Sometimes you have two lists that you want to keep in sync with each other. For example, in this assignment, you will track bank accounts and the balances in each one.</p>
+
+        <aside class="stay-middle"><heading>Hint from Instructor:</heading>
+            <p>In future courses you will learn how to create a new custom data type (so you aren't limited to ints, floats, and strings). In that case, you can create a data type for bank accounts that stores both the name of the account and it's balance. Then, you only have one list: a list of bank accounts. This is called Programming with Classes or "Object-oriented Programming."</p>
+        </aside>
+
+        <h2>Assignment</h2>
+        <h3>Core Requirements</h3>
+        <p>Work through these core requirements step-by-step to complete the program. Please don't skip ahead and do the whole thing at once, because others on your team may benefit from building the program up slowly.</p>
+
+        <ol>
+            <li><p>Create two lists, one for the names of the bank accounts, and one for the balances.</p>
+                <p>Ask the user for the name of the bank account and then for it's current balance. Keep looping until the user types "quit" for the name of an account. For each one, add the name and the balance to the appropriate list.</p></li>
+            <li><p>Loop through the lists using an index and display the name of the account with the balance next to it.</p></li>
+            <li><p>Compute and display the total balance in all of the accounts and the average balance.</p></li>
+        </ol>
+
+        <p>The following shows the expected output:</p>
+
+<pre><code class="plaintext">
+Enter the names and balances of bank accounts (type: quit when done)
+What is the name of this account? <span class="user-input">checking</span>
+What is the balance? <span class="user-input">102.57</span>
+What is the name of this account? <span class="user-input">savings</span>
+What is the balance? <span class="user-input">82.32</span>
+What is the name of this account? <span class="user-input">emergency fund</span>
+What is the balance? <span class="user-input">200.00</span>
+What is the name of this account? <span class="user-input">quit</span>
+
+Account Information:
+checking - $102.57
+savings - $82.32
+emergency fund - $200.0
+
+Total: $384.89
+Average: $128.30
+</code></pre>
+
+        <h3>Stretch Challenge</h3>
+        <ol>
+            <li><p>Determine which bank account has the highest balance and display the name and balance of that account.</p></li>
+            <li><p>Change your display so that it shows the index of the account next to the name.</p>
+                <p>After displaying the list, ask the user if they want to update an account. If they respond with <code>yes</code>, ask for the index of the account, and the new balance.</p></li>
+            <li><p>Change the last step into a loop, so that the user can keep updating accounts until they say no. After each update, display the new list of balances.</p></li>
+        </ol>
+
+        <p>The following shows the expected output after completing the stretch challenges:</p>
+
+<pre><code class="plaintext">
+Enter the names and balances of bank accounts (type: quit when done)
+What is the name of this account? <span class="user-input">checking</span>
+What is the balance? <span class="user-input">238.12</span>
+What is the name of this account? <span class="user-input">savings</span>
+What is the balance? <span class="user-input">392.99</span>
+What is the name of this account? <span class="user-input">quit</span>
+
+Account Information:
+0. checking - $238.12
+1. savings - $392.99
+
+Total: $631.11
+Average: $315.56
+Highest balance: savings - $392.99
+
+Do you want to update an account? <span class="user-input">yes</span>
+What account index do you want to update? <span class="user-input">0</span>
+What is the new amount? <span class="user-input">200</span>
+
+Account Information:
+0. checking - $200.00
+1. savings - $392.99
+
+Do you want to update an account? <span class="user-input">yes</span>
+What account index do you want to update? <span class="user-input">1</span>
+What is the new amount? <span class="user-input">425.50</span>
+
+Account Information:
+0. checking - $200.00
+1. savings - $425.50
+
+Do you want to update an account? <span class="user-input">no</span>
+
+Account Information:
+0. checking - $200.00
+1. savings - $425.50
+</code></pre>
+
+        <h2>Sample Solution</h2>
+        <p>When your program is finished, please view the sample solution for this program to compare it to your approach.</p>
+
+        <p>You should work to complete this team activity for the one hour period first, without looking at the sample solution. However, if you have worked on it for at least an hour and are still having problems, you may feel free to use the sample solution to help you finish your program.</p>
+
+        <ul>
+            <li><p>Sample solution (Core requirements): <a href="./teach10_sample_py.html" target="_blank">teach10_sample.py</a></p></li>
+            <li><p>Sample solution (Stretch challenges): <a href="./teach10_stretch_sample_py.html" target="_blank">teach10_stretch_sample.py</a></p></li>
+        </ul>
+
+        <h2>Submission</h2>
+        <p>When complete, please report your progress in the associated I-Learn quiz.</p>
+        <p>If you decided to do additional work on the program after your team activity, either by yourself or with others, feel free to include that additional work when you report on your progress in I-Learn.</p>
+
+    </article>
+
+    <script src="../site/js/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+ 
+</body>
+</html>

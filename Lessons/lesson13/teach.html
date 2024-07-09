@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../site/style.css" />
+    <title>CSE 110 - Course Materials</title>
+</head>
+<body>
+    <header id="courseTitle">
+        <span class="icon-byui-logo"></span>
+        <h1>CSE 110 | Programming Building Blocks</h1>
+    </header>
+    <article>
+        <h1>13 Teach: Team Activity</h1>
+        <heading class="subtitle">Areas of Shapes Revisited</heading>
+
+        <h2>Overview</h2>
+        <p>Earlier in the course, you completed a team activity to compute the areas of squares, rectangles, and circles. Please refer to <a href="../lesson03/teach.html">03 Teach: Team Activity</a> for the details of that activity.</p>
+
+        <p>For this assignment, you are going to repeat the earlier calculations, but this time, you will make three functions, one to calculate each of the areas.</p>
+
+        <h2>Assignment</h2>
+        <p>Write functions to compute and return the areas of squares, rectangles, and circles. These functions <strong>should not</strong> display the values directly, but rather should return them, so they could be used in other parts of the program.</p>
+
+        <h3>Core Requirements</h3>
+        <p>Work through these core requirements step-by-step to complete the program. Please don't skip ahead and do the whole thing at once, because others on your team may benefit from building the program up slowly.</p>
+
+        <ol>
+            <li>
+                <p>Write a function <code>compute_area_square</code> that accepts a single value as a parameter, and then computes the area and returns it.</p>
+                <p>Below the function, write code to prompt the user for the side of a square and save it into a variable, then pass this variable to the function to compute the area. Finally, get the result back from the function and display it.</p>
+            </li>
+            <li><p>Repeat the previous step to write and test the functions <code>compute_area_rectangle</code> and <code>compute_area_circle</code>.</p></li>
+            <li><p>Write a loop to ask the user what kind of shape they have, then prompt for the length of a side, or sides, or radius, and then calls the appropriate function, and displays the result. The program should continue looping until the user enters "quit" for the shape.</p></li>
+        </ol>
+
+        <h3>Stretch Challenge</h3>
+        <ol>
+            <li>
+                <p>Recognize that you can compute the area of a square by passing the task along to a function that computes the areas of rectangles, by giving it the side of the square twice.</p>
+                <p>Change your program so that the <code>compute_area_square</code> function doesn't compute the area directly, but instead calls the <code>compute_area_rectangle</code> to do the work. It should pass the square side length to it (twice) and then return the value that the <code>compute_area_rectangle</code> function computes.</p></li>
+            <li>
+                <p>Write a new function called <code>compute_area</code> that accepts a first parameter of <code>shape</code> that can be either "square" or "circle" and then a value for the length of the side or the radius depending on the context. The function should then determine the correct function to use, based on the first parameter, call it, and return the value.</p>
+                <p>Change your program to use this function for the square and circle cases and verify that it works.</p>
+            </li>
+            <li>
+                <p>Add the ability for your new <code>compute_area</code> function to also compute the areas for rectangles. This means that you'll have to be able to accept calls like this: <code>compute_area("circle", 5)</code>, this: <code>compute_area("square", 10)</code>, and this <code>compute_area("rectangle", 7, 8).</code></p>
+                <p>In order to make this work correctly, you'll need to make use of a default value for the last parameter.</p>
+                <p>Change your program to use this for all three calculations and verify that it works.</p>
+            </li>
+        </ol>
+
+        <h2>Sample Solution</h2>
+        <p>When your program is finished, please view the sample solution for this program to compare it to your approach.</p>
+
+        <p>You should work to complete this team activity for the one hour period first, without looking at the sample solution. However, if you have worked on it for at least an hour and are still having problems, you may feel free to use the sample solution to help you finish your program.</p>
+
+        <ul>
+            <li><p>Sample solution (Core requirements): <a href="./teach13_sample_py.html" target="_blank">teach13_sample.py</a></p></li>
+            <li><p>Sample solution (Stretch challenges): <a href="./teach13_stretch_sample_py.html" target="_blank">teach13_stretch_sample.py</a></p></li>
+        </ul>
+
+        <h2>Submission</h2>
+        <p>When complete, please report your progress in the associated I-Learn quiz.</p>
+        <p>If you decided to do additional work on the program after your team activity, either by yourself or with others, feel free to include that additional work when you report on your progress in I-Learn.</p>
+
+    </article>
+
+    <script src="../site/js/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+ 
+</body>
+</html>

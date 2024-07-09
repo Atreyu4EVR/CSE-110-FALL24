@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../site/style.css" />
+    <title>CSE 110 - Course Materials</title>
+</head>
+<body>
+    <header id="courseTitle">
+        <span class="icon-byui-logo"></span>
+        <h1>CSE 110 | Programming Building Blocks</h1>
+    </header>
+    <article>
+        <h1>03 Prepare: Checkpoint</h1>
+        <heading class="subtitle">Numeric Data Types</heading>
+
+        <h2>Overview</h2>
+        <p>Practice converting user input to numeric data types and perform calculations.</p>
+
+        <h2>Assignment</h2>
+        <p>For this assignment, you'll get to practice several different examples, but they should all be part of the same program.</p>
+        
+        <aside class="stay-middle"><heading>Hint from Instructor:</heading>
+            <p>After completing part of the assignment, if you want to keep the code there, but not have it run each time, you can put a <code>#</code> character at the front of the line to "comment it out" or temporarily turn it into a comment. Then, if you want the code to run again, you remove the <code>#</code> character and it is code again.</p>
+        </aside>
+
+        <p>Write a program that does the following:</p>
+
+        <ol>
+            <li><p>Prompt the user for their age. Convert it to a number, add one to it, and tell them how old they will be on their next birthday.</p></li>
+            <li><p>Prompt the user for the number of egg cartons they have. Assume each carton holds 12 eggs, multiply their number by 12, and display the total number of eggs.</p></li>
+            <li><p>Prompt the user for a number of cookies and a number of people. Then, divide the number of cookies by the number of people to determine how many cookies each person gets. </p></li>
+
+            <!-- <li><p>Prompt the user for the number of people in the class and then a size of the student groups. Compute the number of groups as follows:</p>
+                <p>A) Use the regular division operator which may result in a decimal if the number of groups does not divide evenly.</p>
+                <p>B) Use the <code>//</code> and <code>%</code> operators to determine the number of full groups, and then the number of students left over.</p></li> -->
+        </ol>
+
+        <p>Here is an example of the tasks when run:</p>
+
+<pre><code class="plaintext">
+How old are you? <span class="user-input">25</span>
+On your next birthday, you will be 26
+
+How many egg cartons do you have? <span class="user-input">3</span>
+You have 36 eggs
+
+How many cookies do you have? <span class="user-input">18</span>
+How many people are there? <span class="user-input">8</span>
+Each person may have 2.25 cookies
+</code></pre>
+
+<!-- How many people are in the class? <span class="user-input">46</span>
+What is the group size? <span class="user-input">6</span>
+The number of groups is: 7.666666666666667
+The number of complete groups is: 7
+The number of students left over is: 4 -->
+
+
+
+        <h2>Sample Solution</h2>
+        <p>When your program is finished, please view a sample solution of this program to compare your approach to that one.</p>
+
+        <p>You should work to complete this checkpoint program first, without looking at the sample solution. However, if you have worked on it for at least an hour and are still having problems, you may feel free to use the sample solution to help you finish your program.</p>
+
+        <ul>
+            <li><p>Sample solution: <a href="./check03_sample_py.html" target="_blank">check03_sample.py</a></p></li>
+        </ul>
+
+        <h2>Testing Procedure</h2>
+        <p>Verify that your program works correctly by following each step in this testing procedure:</p>
+
+        <ol>
+            <li><p>Run through the entire program using the inputs shown in the example above. Make sure your output matches the output shown above.</p></li>
+            <li><p>For the first question, regarding ages, try entering the ages 18 and 59 (one at a time), and ensure that the program correctly outputs the numbers 19 and 60 for the next birthdays.</p></li>
+            <li><p>For the second question, regarding eggs, try entering a 5 and 0 (one at a time), and ensure that the program outputs 60 and 0 eggs.</p></li>
+            <li><p>For the third question, regarding cookies, trying entering two more sets of values (one at a time) and make sure the division works correctly. Try one set of values that results in an even number (no decimal part) and one that results in a decimal and make sure they both work correctly.</p></li>
+            <li><p>Double check that the output matches the example output exactly, including:
+
+            </p>
+
+            <ul>
+                <li><p>The numeric values should appear in the middle of the other words, not on a separate line.</p></li>
+                <li><p>The number of spaces before and after the numbers should match the example output.</p></li>
+                <li><p>There should be a blank line before each section.</p></li>
+            </ul>
+        
+            </li>
+        </ol>
+
+
+        <h2>Submission</h2>
+        <p>When complete, please report your progress in the associated I-Learn quiz.</p>
+
+    </article>
+
+    <script src="../site/js/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+ 
+</body>
+</html>

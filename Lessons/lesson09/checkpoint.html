@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../site/style.css" />
+    <title>CSE 110 - Course Materials</title>
+</head>
+<body>
+    <header id="courseTitle">
+        <span class="icon-byui-logo"></span>
+        <h1>CSE 110 | Programming Building Blocks</h1>
+    </header>
+    <article>
+        <h1>09 Prepare: Checkpoint</h1>
+
+        <h2>Overview</h2>
+        <p>Practice working with lists.</p>
+
+        <h2>Assignment</h2>
+        <p>Ask the user for the names of their friends and append them to a list. Then, display each of the friends in the list. You should stop asking for friends when the user types "end".</p>
+
+        <p>Hint 1: You should keep asking for friends, as long as the name is not "end". (Does this sound like a loop you know?)</p>
+
+        <p>Hint 2: Be careful not to add "end" to the list of names when it is typed. You can check if the name is or is not something before you add it to the list.</p>
+
+        <p>The following examples show the expected output:</p>
+<pre><code class="plaintext">
+Type the name of a friend: <span class="user-input">Matthew</span>
+Type the name of a friend: <span class="user-input">Mark</span>
+Type the name of a friend: <span class="user-input">Luke</span>
+Type the name of a friend: <span class="user-input">John</span>
+Type the name of a friend: <span class="user-input">end</span>
+
+Your friends are:
+Matthew
+Mark
+Luke
+John
+</code></pre>
+
+<p>Another example could be the following:</p>
+<pre><code class="plaintext">
+Type the name of a friend: <span class="user-input">Peter</span>
+Type the name of a friend: <span class="user-input">James</span>
+Type the name of a friend: <span class="user-input">John</span>
+Type the name of a friend: <span class="user-input">end</span>
+
+Your friends are:
+Peter
+James
+John
+</code></pre>
+
+        <h2>Sample Solution</h2>
+        <p>When your program is finished, please view a sample solution of this program to compare your approach to that one.</p>
+
+        <p>You should work to complete this checkpoint program first, without looking at the sample solution. However, if you have worked on it for at least an hour and are still having problems, you may feel free to use the sample solution to help you finish your program.</p>
+
+        <ul>
+            <li><p>Sample solution: <a href="./check09_sample_py.html" target="_blank">check09_sample.py</a></p></li>
+        </ul>
+
+        <h2>Testing Procedure</h2>
+        <p>Verify that your program works correctly by following each step in this testing procedure:</p>
+
+        <ol>
+            <li><p>Test it with just one name.</p></li>
+            <li><p>Test it with 3&ndash;4 names</p></li>
+            <li><p>Make sure that the word "end" doesn't display at the end of your list of friends.</p></li>
+            <li><p>Test it by entering the same name 3 times before typing end (the result should be that you see the name repeated 3 times in the list).</p></li>
+            <li><p>Test it with no names, just the word end, and make sure it doesn't cause any errors.</p></li>
+        </ol>
+
+        <h2>Submission</h2>
+        <p>When complete, please report your progress in the associated I-Learn quiz.</p>
+
+
+    </article>
+
+    <script src="../site/js/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+ 
+</body>
+</html>

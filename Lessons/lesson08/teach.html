@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../site/style.css" />
+    <title>CSE 110 - Course Materials</title>
+</head>
+<body>
+    <header id="courseTitle">
+        <span class="icon-byui-logo"></span>
+        <h1>CSE 110 | Programming Building Blocks</h1>
+    </header>
+    <article>
+        <h1>08 Teach: Team Activity</h1>
+        <heading class="subtitle">Iterating Through Strings</heading>
+
+        <h2>Overview</h2>
+        <p>In this activity, you'll practice looping through letters in a word and comparing a letter to another letter to determine what should be printed.</p>
+
+        <h2>Assignment</h2>
+        <p>Write a program that asks the user for their favorite letter. Then, loop through a programmed word one letter at a time. If the letter in the programmed word is the user's favorite, print it out as a capital letter (or "hide" it), if not, print it out as a lower case letter.</p>
+
+        <h3>Printing without new lines</h3>
+        <p>To this point, whenever we have used a print statement, it has always been on it's own line, so that the next line starts on a new line. If you <em>do not</em> want the print statement to end with a new line, you can specify the <code>end</code> as follows:</p>
+
+<pre><code class="python">
+print("This is line one.", end="")
+print("This is line two.")
+</code></pre>
+
+        <p>This outputs the following:</p>
+
+<pre><code class="plaintext">
+This is line one.This is line two.
+</code></pre>        
+
+        <p>Notice, that because you told the first print statement to end with nothing (by using <code>""</code>), it does not end with a newline and the next line prints directly following it.</p>
+
+        <h3>Core Requirements</h3>
+        <ol>
+            <li>
+                <p>Create a string variable to hold the word <code>"Commitment"</code>.</p>
+                <p>Write code that loops through the word letter by letter. If the letter is <code>"m"</code>, print it as a capital letter. If the letter is anything else, print it out as a lowercase letter.</p>
+                <p>For this part, it is ok to print each letter on it's own line.</p>
+            </li>
+
+                <p>The output should look as follows:</p>
+
+<pre><code class="plaintext">
+c
+o
+M
+M
+i
+t
+M
+e
+n
+t
+</code></pre>                
+
+            <li>
+                <p>Change the print statements so that each letter is not printed on its own line, but rather they are printed out next to each other on the same line.</p>
+                <p>Also, change the program to allow the user to specify the letter (rather than always using <code>"m"</code>). Make sure your program matches the letter in the word, regardless of whether the user entered it as a capital or lowercase, and regardless of whether that letter was a capital or lowercase in the original word.</p>
+            </li>
+
+            <p>The output should look as follows:</p>
+
+<pre><code class="plaintext">
+What is your favorite letter? <span class="user-input">T</span>
+commiTmenT
+</code></pre>
+
+
+<li>
+    <p>Change the program, so that instead of capitalizing the user's favorite letter, it "hides" it, and replaces it with an underscore in the display.</p>
+</li>
+
+<p>The output should look as follows:</p>
+
+<pre><code class="plaintext">
+What is your favorite letter? <span class="user-input">m</span>
+co__it_ent
+</code></pre>
+<p>Or another example could be:</p>
+<pre><code class="plaintext">
+What is your favorite letter? <span class="user-input">t</span>
+commi_men_
+</code></pre>
+
+
+        </ol>
+
+        <h3>Stretch Challenge</h3>
+
+        <p>For this part of the activity, recall the following from the preparation material:</p>
+
+        <p>Sometimes, when looping through the letters in a string, you might want to know not only the letter, but also its position in the string. In Python, you can do this using the <code>enumerate</code> command, which gives you the position number and the letter at the same time, as follows:</p>
+
+<pre><code class="python">
+first_name = "Brigham"
+
+# Notice by using enumerate, we specify both i and letter
+for i, letter in enumerate(first_name):
+    print(f"The letter {letter} is at position {i}")
+</code></pre>
+
+        <p>The output of this code is:</p>
+
+<pre><code class="plaintext">
+The letter B is at position 0
+The letter r is at position 1
+The letter i is at position 2
+The letter g is at position 3
+The letter h is at position 4
+The letter a is at position 5
+The letter m is at position 6
+</code></pre>
+
+
+        <p>Using this syntax, complete the following stretch challenges:</p>
+
+        <ol>
+
+            <li><p>Start a new program that will work similar to one from the core requirements, but use a different string, this time using the following quote from President Nelson: "In coming days, it will not be possible to survive spiritually without the guiding, directing, comforting, and constant influence of the Holy Ghost."</p>
+
+            <p>Then, instead of your program asking for a favorite letter, have it asks for a number <em>n</em>. Make the program capitalize every <em>n-th</em> letter in the string.</p></li>
+
+            <p>The output should look as follows:</p>
+
+<pre><code class="plaintext">
+    Please enter a number: 3
+    In ComIng daYs, it wiLl Not be poSsiBle to suRviVe SpiRitUalLy WitHouT tHe GuiDinG, DirEctIng, cOmfOrtIng, aNd ConStaNt InfLueNce of thE hOly ghOst.
+</code></pre>
+
+            <li>
+                <p>Add an additional feature to your program so that the user can enter another number and see it's result. To do this, you should ask the user if they would like to enter another number, and continue looping as long as they type <code>yes</code>.</p>
+            </li>
+
+            <p>The output should look as follows:</p>
+
+<pre><code class="plaintext">
+Please enter a number: 3
+In ComIng daYs, it wiLl Not be poSsiBle to suRviVe SpiRitUalLy WitHouT tHe GuiDinG, DirEctIng, cOmfOrtIng, aNd ConStaNt InfLueNce of thE hOly ghOst.
+Would you like to enter another number? yes
+Please enter a number: 4
+In cOminG daYs, It wIll Not Be pOssiBle To sUrviVe sPiriTualLy wIthoUt tHe gUidiNg, DireCtinG, cOmfoRtinG, aNd cOnstAnt InflUencE of the holY ghOst.
+Would you like to enter another number? yes
+Please enter a number: 5
+In coMing Days, it wIll nOt be possIble To suRvive spirItualLy wiThout the GuidiNg, dIrectIng, ComfoRting, and consTant InfluEnce Of thE holY ghoSt.
+Would you like to enter another number? yes
+Please enter a number: 10
+In coming Days, it wIll not be possible To survive spiritualLy without the guidiNg, directIng, comfoRting, and constant Influence Of the holY ghost.
+Would you like to enter another number? no
+Goodbye
+</code></pre>
+
+
+<!--
+            <li>
+
+
+                <p>Create a list of lists, using this syntax:</p>
+<pre><code class="python">
+words1 = ["apple", "orange"]
+words2 = ["tomato", "carrot"]
+
+big_list = [words1, words2]
+</code></pre>              
+
+                <p>Add your own words to these lists and include at least three lists of words. Then change your program to have a third loop so it loops through all the lists, then through each word, then through each letter.</p>
+            </li>
+            <li><p>Instead of having the user enter their favorite letter, have them enter their favorite words. Then, go through the letters of this word and treat each one of them as their favorite letter.</p>
+                <section class="tips">
+                    <p>Instructor tip:</p>
+                    <p>This one is deceptively tricky. Not only do you need to loop through each letter, but you can't just print it out right away, you need to use a boolean variable to track if it's a match and then print later on.</p>
+                </section>
+
+            </li>
+            <p>The final stretch challenge output might look as follows:</p>
+<pre><code class="plaintext">
+What is your favorite word? <span class="user-input">taco</span>
+As yOu ChOOse TO live On The lOrd's side yOu Are never AlOne 
+nOThing is mOre CruCiAl TO yOur eTernAl life ThAn yOur Own COnversiOn 
+ACT by inspirATiOn mOTivATed by lOve 
+</code></pre>            
+        </ol>        
+    -->
+
+
+
+
+        <h2>Sample Solution</h2>
+        <p>When your program is finished, please view the sample solution for this program to compare it to your approach.</p>
+
+        <p>You should work to complete this team activity for the one hour period first, without looking at the sample solution. However, if you have worked on it for at least an hour and are still having problems, you may feel free to use the sample solution to help you finish your program.</p>
+
+        <ul>
+            <li><p>Sample solution (Core requirements): <a href="./teach08_sample_py.html" target="_blank">teach08_sample.py</a></p></li>
+            <li><p>Sample solution (Stretch challenges): <a href="./teach08_stretch_sample_py.html" target="_blank">teach08_stretch_sample.py</a></p></li>
+        </ul>
+
+        <h2>Submission</h2>
+        <p>When complete, please report your progress in the associated I-Learn quiz.</p>
+        <p>If you decided to do additional work on the program after your team activity, either by yourself or with others, feel free to include that additional work when you report on your progress in I-Learn.</p>
+
+    </article>
+
+    <script src="../site/js/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+ 
+</body>
+</html>

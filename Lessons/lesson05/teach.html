@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../site/style.css" />
+    <title>CSE 110 - Course Materials</title>
+</head>
+<body>
+    <header id="courseTitle">
+        <span class="icon-byui-logo"></span>
+        <h1>CSE 110 | Programming Building Blocks</h1>
+    </header>
+    <article>
+        <h1>05 Teach: Team Activity</h1>
+        <heading class="subtitle">Grade Calculator</heading>
+
+        <h2>Overview</h2>
+        <p>Write a program that determines the letter grade for a course according to the following scale:</p>
+
+        <ul>
+            <li><p>A >= 90</p></li>
+            <li><p>B >= 80</p></li>
+            <li><p>C >= 70</p></li>
+            <li><p>D >= 60</p></li>
+            <li><p>F &lt; 60</p></li>
+        </ul>        
+
+        <h2>Assignment</h2>
+        <p>Start by completing the core requirements, then when that part is complete, if you have time, see if you can complete some of the stretch challenges as well.</p>
+
+        <p>Please work through the requirements <strong>in order</strong> rather than jumping ahead to more complicated steps, to ensure that everyone is following the concepts.</p>
+
+        <h3>Core Requirements</h3>
+        <ol>
+            <li><p>Ask the user for their grade percentage, then write a series of <code>if-elif-else</code> statements to print out the appropriate letter grade. (At this point, you'll have a separate print statement for each grade letter in the appropriate block.)</p></li>
+
+            <li><p>Assume that you must have at least a 70 to pass the class. After determining the letter grade and printing it out. Add a separate if statement to determine if the user passed the course, and if so display a message to congratulate them. If not, display a different message to encourage them for next time.</p></li>
+
+            <li>
+                <p>Change your code from the first part, so that instead of printing the letter grade in the body of each <code>if</code>, <code>elif</code>, or <code>else</code> block, instead create a new variable called <code>letter</code> and then in each block, set this variable to the appropriate value. Finally, after the whole series of <code>if-elif-else</code> statements, have a single print statement that prints the letter grade once.</p>
+            </li>
+        </ol>
+
+        <h3>Stretch Challenge</h3>
+        <ol>
+            <li>
+                <p>Add to your code the ability to include a "+" or "-" next to the letter grade, such as <em>B+</em> or <em>A-</em>. For each grade, you'll know it is a "+" if the last digit is >= 7. You'll know it is a minus if the last digit is < 3 and otherwise it has no sign.</p>
+
+                <p>After your logic to determine the grade letter, add another section to determine the sign. Save this sign into a variable. Then, display both the grade letter and the sign in one print statement.</p>
+
+                <p>Hint: To get the last digit, you could divide the number by 10, and get the remainder. You might refer back to the <a href="../lesson03/prepare.html">preparation material for Lesson 03</a> to see the operators and find the one that does division and gives you the remainder.</p>
+
+                <p>At this point, don't worry about the exceptional cases of <em>A+</em>, <em>F+</em>, or <em>F-</em>.</p>
+            </li>
+            
+            <li><p>Recognize that there is no <em>A+</em> grade, only <em>A</em> and <em>A-</em>. Add some additional logic to your program to detect this case and handle it correctly.</p></li>
+
+            <li><p>Similarly, recognize that there is no <em>F+</em> or <em>F-</em> grades, only <em>F</em>. Add additional logic to your program to detect these cases and handle them correctly.</p></li>
+        </ol>        
+
+        <h2>Sample Solution</h2>
+        <p>When your program is finished, please view the sample solution for this program to compare it to your approach.</p>
+
+        <p>You should work to complete this team activity for the one hour period first, without looking at the sample solution. However, if you have worked on it for at least an hour and are still having problems, you may feel free to use the sample solution to help you finish your program.</p>
+
+        <ul>
+            <li><p>Sample solution (Core requirements): <a href="./teach05_sample_py.html" target="_blank">teach05_sample.py</a></p></li>
+            <li><p>Sample solution (Stretch challenges): <a href="./teach05_stretch_sample_py.html" target="_blank">teach05_stretch_sample.py</a></p></li>
+        </ul>
+
+        <h2>Submission</h2>
+        <p>When complete, please report your progress in the associated I-Learn quiz.</p>
+        <p>If you decided to do additional work on the program after your team activity, either by yourself or with others, feel free to include that additional work when you report on your progress in I-Learn.</p>
+
+    </article>
+
+    <script src="../site/js/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+ 
+</body>
+</html>

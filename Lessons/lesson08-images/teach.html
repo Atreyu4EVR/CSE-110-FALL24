@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../site/style.css" />
+    <title>CSE 110 - Course Materials</title>
+</head>
+<body>
+    <header id="courseTitle">
+        <span class="icon-byui-logo"></span>
+        <h1>CSE 110 | Programming Building Blocks</h1>
+    </header>
+    <article>
+        <h1>08 Teach: Team Activity</h1>
+        <heading class="subtitle">Loops of Loops</heading>
+
+        <h2>Overview</h2>
+        <p>When learning multiplication in school, students often write out multiplication tables where numbers are written along the top of each column and on the left side of each row. Then, the student fills in each spot in the table as the product of the number at top of the column and the left of the row. This might produce something like the following:</p>
+
+<pre><code class="plaintext">
+    1   2   3   4   5   6   7   8   9  10  11  12 
+    2   4   6   8  10  12  14  16  18  20  22  24 
+    3   6   9  12  15  18  21  24  27  30  33  36 
+    4   8  12  16  20  24  28  32  36  40  44  48 
+    5  10  15  20  25  30  35  40  45  50  55  60 
+    6  12  18  24  30  36  42  48  54  60  66  72 
+    7  14  21  28  35  42  49  56  63  70  77  84 
+    8  16  24  32  40  48  56  64  72  80  88  96 
+    9  18  27  36  45  54  63  72  81  90  99 108 
+   10  20  30  40  50  60  70  80  90 100 110 120 
+   11  22  33  44  55  66  77  88  99 110 121 132 
+   12  24  36  48  60  72  84  96 108 120 132 144 
+</code></pre>
+
+        <p>In this activity you'll write a program that uses loops within loops to generate multiplication tables.</p>
+
+        <aside class="stay-middle"><heading>Hint from Instructor:</heading>
+            <p>This can be a challenging assignment. Please be aware that in addition to the sample solution code, there is also a video walk-through posted at the bottom of this page that steps through the creation of the sample solution line by line, which may be helpful if you feel nervous about this topic or activity.</p>
+        </aside>
+
+
+        <h2>Assignment</h2>
+        <p>Write a program that asks the user for the number of rows and columns in the table and then generates the associated multiplication table. The following are examples of the finished assignment:</p>
+
+
+<pre><code class="plaintext">
+How many columns and rows do you want in your multiplication table? 5
+  1   2   3   4   5 
+  2   4   6   8  10 
+  3   6   9  12  15 
+  4   8  12  16  20 
+  5  10  15  20  25
+</code></pre>
+
+<pre><code class="plaintext">
+How many columns and rows do you want in your multiplication table? 12
+  1   2   3   4   5   6   7   8   9  10  11  12 
+  2   4   6   8  10  12  14  16  18  20  22  24 
+  3   6   9  12  15  18  21  24  27  30  33  36 
+  4   8  12  16  20  24  28  32  36  40  44  48 
+  5  10  15  20  25  30  35  40  45  50  55  60 
+  6  12  18  24  30  36  42  48  54  60  66  72 
+  7  14  21  28  35  42  49  56  63  70  77  84 
+  8  16  24  32  40  48  56  64  72  80  88  96 
+  9  18  27  36  45  54  63  72  81  90  99 108 
+ 10  20  30  40  50  60  70  80  90 100 110 120 
+ 11  22  33  44  55  66  77  88  99 110 121 132 
+ 12  24  36  48  60  72  84  96 108 120 132 144
+</code></pre>
+
+        <p>When complete, this program doesn't require too many lines of code, but they can be conceptually difficult to combine together when you are first learning to work with loops, so please work through the steps of this assignment, rather than writing the whole program at once.</p>
+
+        <p>To complete the assignment, you need a few other tools.</p>
+
+        <h3>Printing numbers that take up a certain amount of space</h3>
+        <p>In previous lessons you've used formatting strings to display numbers with a certain number of decimal places <code>"{the_number:.2f}"</code>. In a similar way, you can specify the number of spaces to take up by including that number after the colon as follows:</p>
+
+<pre><code class="python">
+the_number = 128
+print(f"{the_number}")
+print(f"{the_number:1}")
+print(f"{the_number:3}")
+print(f"{the_number:5}")
+print(f"{the_number:10}")
+</code></pre>
+
+        <p>This outputs the following:</p>
+
+<pre><code class="plaintext">
+128
+128
+128
+  128
+       128
+</code></pre>
+
+        <p>Notice that if the number you specify is less than or equal to the number of digits in the number, it will simply display the number normally.</p>
+
+        <h3>Printing without new lines</h3>
+        <p>To this point, whenever we have used a print statement, it has always been on it's own line, so that the next line starts on a new line. If you <em>do not</em> want the print statement to end with a new line, you can specify the <code>end</code> as follows:</p>
+
+<pre><code class="python">
+print("This is line one.", end="yyy")
+print("This is line two.")
+</code></pre>
+
+        <p>This outputs the following:</p>
+
+<pre><code class="plaintext">
+This is line one.yyyThis is line two.
+</code></pre>
+
+        <p>Along the same lines, if you do not want anything at the end, you can specify <code>end=""</code> as follows:</p>
+
+<pre><code class="python">
+print("This is line one.", end="")
+print("This is line two.")
+</code></pre>
+
+        <p>This outputs the following:</p>
+
+<pre><code class="plaintext">
+This is line one.This is line two.
+</code></pre>
+
+        <p>Notice, that because you told the first print statement to end with nothing (by using <code>""</code>), it does not end with a newline and the next line prints directly following it.</p>
+
+        <h3>Core Requirements</h3>
+        <ol>
+            <li>
+                <p>Ask the user for the number of rows and columns (note: you are only asking for a single number that will be used for both the rows and the columns).</p>
+                <p>Display the numbers 1 up to <em>and including</em> that number, each on their own line at this point.</p>
+            </li>
+                <p>The output should look as follows:</p>
+
+<pre><code class="plaintext">
+How many columns and rows do you want in your multiplication table? 5
+1
+2
+3
+4
+5
+</code></pre>                
+
+            <li>
+                <p>Change the program so that the numbers are printed on the same line with a space between them.</p>
+            </li>
+
+                <p>The output should look as follows:</p>
+
+<pre><code class="plaintext">
+How many columns and rows do you want in your multiplication table? 5
+1 2 3 4 5 
+</code></pre>                
+
+            <li>
+                <p>You now have code that can print out each column you'll need on a line. Now, you need to repeat it for a second line, and a third line, and so forth up until the number of rows that you need.</p>
+                <p>To accomplish this, add another loop for each row that has your previous code as its body. Start by simply having it duplicate the same row over and over again. Keep in mind that you'll need to display a newline after the numbers for each row are finished.</p>
+                <p>Then, once this is working change it to display the product of the row and column.</p>
+            </li>
+        </ol>
+
+            <p>The output at the end of the core requirements should look as follows:</p>
+
+<pre><code class="plaintext">
+How many columns and rows do you want in your multiplication table? 5
+1 2 3 4 5 
+2 4 6 8 10 
+3 6 9 12 15 
+4 8 12 16 20 
+5 10 15 20 25
+</code></pre>
+            
+
+        <h3>Stretch Challenge</h3>
+        <ol>
+            <li><p>Change your program so that each number that is displayed takes up 3 spaces. This should look as follows:</p></li>
+<pre><code class="plaintext">
+How many columns and rows do you want in your multiplication table? 5
+  1   2   3   4   5 
+  2   4   6   8  10 
+  3   6   9  12  15 
+  4   8  12  16  20 
+  5  10  15  20  25 
+</code></pre>
+
+<pre><code class="plaintext">
+How many columns and rows do you want in your multiplication table? 12
+  1   2   3   4   5   6   7   8   9  10  11  12 
+  2   4   6   8  10  12  14  16  18  20  22  24 
+  3   6   9  12  15  18  21  24  27  30  33  36 
+  4   8  12  16  20  24  28  32  36  40  44  48 
+  5  10  15  20  25  30  35  40  45  50  55  60 
+  6  12  18  24  30  36  42  48  54  60  66  72 
+  7  14  21  28  35  42  49  56  63  70  77  84 
+  8  16  24  32  40  48  56  64  72  80  88  96 
+  9  18  27  36  45  54  63  72  81  90  99 108 
+ 10  20  30  40  50  60  70  80  90 100 110 120 
+ 11  22  33  44  55  66  77  88  99 110 121 132 
+ 12  24  36  48  60  72  84  96 108 120 132 144 
+</code></pre>
+
+            <li><p>Notice that in the example of 5 rows and columns, you don't actually need three spaces per number, but instead two will do. Change your code so that it determines the number of spaces to use automatically, based on the largest number that will be produced.</p>
+            <p>For a first approach to this, consider using an if statement to see if the largest number would be greater than or equal to 100.</p>
+            </li>   
+
+            <li><p>For a second approach to the problem of determining the number of spaces per number, consider mathematically determining the number of digits so that your table could work for any number of digits. (You can now do multiplication tables that go into the thousands and beyond!)</p></li>
+        </ol>
+
+        <p>After the final stretch challenge you program can produce the following:</p>
+
+<pre><code class="plaintext">
+How many columns and rows do you want in your multiplication table? 5
+ 1  2  3  4  5 
+ 2  4  6  8 10 
+ 3  6  9 12 15 
+ 4  8 12 16 20 
+ 5 10 15 20 25
+</code></pre>
+
+<pre><code class="plaintext">
+How many columns and rows do you want in your multiplication table? 12
+  1   2   3   4   5   6   7   8   9  10  11  12 
+  2   4   6   8  10  12  14  16  18  20  22  24 
+  3   6   9  12  15  18  21  24  27  30  33  36 
+  4   8  12  16  20  24  28  32  36  40  44  48 
+  5  10  15  20  25  30  35  40  45  50  55  60 
+  6  12  18  24  30  36  42  48  54  60  66  72 
+  7  14  21  28  35  42  49  56  63  70  77  84 
+  8  16  24  32  40  48  56  64  72  80  88  96 
+  9  18  27  36  45  54  63  72  81  90  99 108 
+ 10  20  30  40  50  60  70  80  90 100 110 120 
+ 11  22  33  44  55  66  77  88  99 110 121 132 
+ 12  24  36  48  60  72  84  96 108 120 132 144 
+</code></pre>
+
+<pre><code class="plaintext">
+How many columns and rows do you want in your multiplication table? 32
+   1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   26   27   28   29   30   31   32 
+   2    4    6    8   10   12   14   16   18   20   22   24   26   28   30   32   34   36   38   40   42   44   46   48   50   52   54   56   58   60   62   64 
+   3    6    9   12   15   18   21   24   27   30   33   36   39   42   45   48   51   54   57   60   63   66   69   72   75   78   81   84   87   90   93   96 
+   4    8   12   16   20   24   28   32   36   40   44   48   52   56   60   64   68   72   76   80   84   88   92   96  100  104  108  112  116  120  124  128 
+   5   10   15   20   25   30   35   40   45   50   55   60   65   70   75   80   85   90   95  100  105  110  115  120  125  130  135  140  145  150  155  160 
+   6   12   18   24   30   36   42   48   54   60   66   72   78   84   90   96  102  108  114  120  126  132  138  144  150  156  162  168  174  180  186  192 
+   7   14   21   28   35   42   49   56   63   70   77   84   91   98  105  112  119  126  133  140  147  154  161  168  175  182  189  196  203  210  217  224 
+   8   16   24   32   40   48   56   64   72   80   88   96  104  112  120  128  136  144  152  160  168  176  184  192  200  208  216  224  232  240  248  256 
+   9   18   27   36   45   54   63   72   81   90   99  108  117  126  135  144  153  162  171  180  189  198  207  216  225  234  243  252  261  270  279  288 
+  10   20   30   40   50   60   70   80   90  100  110  120  130  140  150  160  170  180  190  200  210  220  230  240  250  260  270  280  290  300  310  320 
+  11   22   33   44   55   66   77   88   99  110  121  132  143  154  165  176  187  198  209  220  231  242  253  264  275  286  297  308  319  330  341  352 
+  12   24   36   48   60   72   84   96  108  120  132  144  156  168  180  192  204  216  228  240  252  264  276  288  300  312  324  336  348  360  372  384 
+  13   26   39   52   65   78   91  104  117  130  143  156  169  182  195  208  221  234  247  260  273  286  299  312  325  338  351  364  377  390  403  416 
+  14   28   42   56   70   84   98  112  126  140  154  168  182  196  210  224  238  252  266  280  294  308  322  336  350  364  378  392  406  420  434  448 
+  15   30   45   60   75   90  105  120  135  150  165  180  195  210  225  240  255  270  285  300  315  330  345  360  375  390  405  420  435  450  465  480 
+  16   32   48   64   80   96  112  128  144  160  176  192  208  224  240  256  272  288  304  320  336  352  368  384  400  416  432  448  464  480  496  512 
+  17   34   51   68   85  102  119  136  153  170  187  204  221  238  255  272  289  306  323  340  357  374  391  408  425  442  459  476  493  510  527  544 
+  18   36   54   72   90  108  126  144  162  180  198  216  234  252  270  288  306  324  342  360  378  396  414  432  450  468  486  504  522  540  558  576 
+  19   38   57   76   95  114  133  152  171  190  209  228  247  266  285  304  323  342  361  380  399  418  437  456  475  494  513  532  551  570  589  608 
+  20   40   60   80  100  120  140  160  180  200  220  240  260  280  300  320  340  360  380  400  420  440  460  480  500  520  540  560  580  600  620  640 
+  21   42   63   84  105  126  147  168  189  210  231  252  273  294  315  336  357  378  399  420  441  462  483  504  525  546  567  588  609  630  651  672 
+  22   44   66   88  110  132  154  176  198  220  242  264  286  308  330  352  374  396  418  440  462  484  506  528  550  572  594  616  638  660  682  704 
+  23   46   69   92  115  138  161  184  207  230  253  276  299  322  345  368  391  414  437  460  483  506  529  552  575  598  621  644  667  690  713  736 
+  24   48   72   96  120  144  168  192  216  240  264  288  312  336  360  384  408  432  456  480  504  528  552  576  600  624  648  672  696  720  744  768 
+  25   50   75  100  125  150  175  200  225  250  275  300  325  350  375  400  425  450  475  500  525  550  575  600  625  650  675  700  725  750  775  800 
+  26   52   78  104  130  156  182  208  234  260  286  312  338  364  390  416  442  468  494  520  546  572  598  624  650  676  702  728  754  780  806  832 
+  27   54   81  108  135  162  189  216  243  270  297  324  351  378  405  432  459  486  513  540  567  594  621  648  675  702  729  756  783  810  837  864 
+  28   56   84  112  140  168  196  224  252  280  308  336  364  392  420  448  476  504  532  560  588  616  644  672  700  728  756  784  812  840  868  896 
+  29   58   87  116  145  174  203  232  261  290  319  348  377  406  435  464  493  522  551  580  609  638  667  696  725  754  783  812  841  870  899  928 
+  30   60   90  120  150  180  210  240  270  300  330  360  390  420  450  480  510  540  570  600  630  660  690  720  750  780  810  840  870  900  930  960 
+  31   62   93  124  155  186  217  248  279  310  341  372  403  434  465  496  527  558  589  620  651  682  713  744  775  806  837  868  899  930  961  992 
+  32   64   96  128  160  192  224  256  288  320  352  384  416  448  480  512  544  576  608  640  672  704  736  768  800  832  864  896  928  960  992 1024
+</code></pre>
+
+
+        <h2>Sample Solution</h2>
+        <p>When your program is finished, please view the sample solution for this program to compare it to your approach.</p>
+
+        <p>You should work to complete this team activity for the one hour period first, without looking at the sample solution. However, if you have worked on it for at least an hour and are still having problems, you may feel free to use the sample solution to help you finish your program.</p>
+
+        <ul>
+            <li><p>Sample solution (Core requirements): <a href="./teach08_sample_py.html" target="_blank">teach08_sample.py</a></p></li>
+            <li><p>Sample solution (Stretch challenges): <a href="./teach08_stretch_sample_py.html" target="_blank">teach08_stretch_sample.py</a></p></li>
+        </ul>
+
+        <p>Also, there is a video walk-through of this sample solution:</p>
+        <ul>
+            <li><p>Sample Solution Part 1: <a href="https://video.byui.edu/media/t/0_bzbsga5x" target="_blank">The first for loop</a> (6 mins)</p></li>
+            <li><p>Sample Solution Part 2: <a href="https://video.byui.edu/media/t/0_cdn5rqav" target="_blank">Loops of loops</a> (7 mins)</p></li>
+        </ul>
+
+        <h2>Submission</h2>
+        <p>When complete, please report your progress in the associated I-Learn quiz.</p>
+        <p>If you decided to do additional work on the program after your team activity, either by yourself or with others, feel free to include that additional work when you report on your progress in I-Learn.</p>
+
+    </article>
+
+    <script src="../site/js/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+ 
+</body>
+</html>

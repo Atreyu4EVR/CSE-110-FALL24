@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../site/style.css" />
+    <title>CSE 110 - Course Materials</title>
+</head>
+<body>
+    <header id="courseTitle">
+        <span class="icon-byui-logo"></span>
+        <h1>CSE 110 | Programming Building Blocks</h1>
+    </header>
+    <article>
+        <h1>Instructor Solution</h1>
+        <p>The following shows one way to solve this problem. It is not the <em>only</em> way this can be solved.</p>
+
+        <h2>check02_instructor.py</h2>
+
+<pre><code class="python">
+"""
+File: check02_instructor.py
+Author: Brother Burton
+
+Purpose: Display text to the screen.
+"""
+
+first = input("What is your first name? ")
+last = input("What is your last name? ")
+
+print(f"Your name is {last}, {first} {last}.")
+
+# Be aware that there are many ways to do the formatting of that line, such as:
+# print("Your name is " + last + ", " + first + " " + last + ".")
+# print("Your name is {}, {} {}.".format(last, first, last))
+# print("Your name is {0}, {1} {0}.".format(last, first))
+
+</code></pre>
+
+    </article>
+
+    <script src="../site/js/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+ 
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../site/style.css" />
+    <title>CSE 110 - Course Materials</title>
+</head>
+<body>
+    <header id="courseTitle">
+        <span class="icon-byui-logo"></span>
+        <h1>CSE 110 | Programming Building Blocks</h1>
+    </header>
+    <article>
+        <h1>08 Prepare: Preparation Material</h1>
+
+        <h2>Overview</h2>
+        <p>In this lesson, you will continue working with loops and learning how to solve more complex problems.</p>
+
+        <h2>Preparation Material</h2>
+        <p>In the previous lesson, you learned about <code>while</code> loops. In this lesson, you will build on that foundation to learn about another kind of loop called a <code>for</code> loop.</p>
+
+        <p>Watch the following videos which discuss both kinds of loops:</p>
+        <ul>
+            <li><p><a href="https://www.youtube.com/watch?v=LrOAl8vUFHY&list=PLlrxD0HtieHhS8VzuMCfQD4uJ9yne1mE6&index=27" target="_blank">Loops</a> (5 mins)</p></li>
+            <li><p><a href="https://www.youtube.com/watch?v=rAvD-6MpTw4&list=PLlrxD0HtieHhS8VzuMCfQD4uJ9yne1mE6&index=28" target="_blank">Demo: Loops</a> (3 mins)</p></li>
+        </ul>
+
+        <p>As shown, there are a few different ways you can tell the computer to loop through code over and over again.</p>
+
+        <h3>Looping through a list</h3>
+        <p>One example of looping, is to loop, or iterate, through each item of a collection or a list, one at a time. You will learn about lists in more detail in future lessons, but the following shows an example of looping through a list of words to print them on the screen one at a time:</p>
+
+<pre><code class="python">
+items = ["crayon", "scissors", "paper", "glitter glue", "markers", "pens"]
+
+for item in items:
+    print(f"The item is: {item}")
+</code></pre>
+
+<p>The output of this code is:</p>
+
+<pre><code class="plaintext">
+The item is: crayon
+The item is: scissors
+The item is: paper
+The item is: glitter glue
+The item is: markers
+The item is: pens    
+</code></pre>        
+
+        <p>Just as with <code>if</code> statements, the colon <code>:</code> at the end of your <code>for</code> statement tells the computer that there is a block of code coming. Then, you indent all the code that is in the block. The code that is indented is the code that will be run on each item.</p>
+
+        <p>When looping through each item, you can do much more with it than simply printing it out. You could include an <code>if</code> statement, to check if it meets certain conditions, and then use it in a math expression, or anything else that you've learned how to do in your programs.</p>
+
+        <aside class="stay-middle"><heading>Frequently Asked Questions:</heading>
+            <p>What about the variable <code>item</code>? Is that a special name? Where does it get defined?</p>
+            <p>There is nothing special about the name <code>item</code> in this case. It could have just as easily been called <code>thing</code> or <code>writing_instrument</code>.</p>
+            <p>The for loop syntax here is very clever. When you type <code>for item in items:</code>, the list variable, <code>items</code> must already exist, but the variable for each individual element of the list, in this case <code>item</code>, is defined right in that statement. In short, it's saying, "Go through each element of this list and assign a new variable <code>item</code> to be the value each time through.</p>
+            
+        </aside>
+
+
+        <h3>Looping through numbers</h3>
+        <p>It's very common in programming to want to loop through a series of numbers. You could create a list of numbers, just like the list of words in the last example, like this:</p>
+
+<pre><code class="python">
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre>        
+
+        <p>But this could get really long if you wanted to work with a large amount of numbers, so there is an easier way, using <code>range</code>.</p>
+
+        <p>You can create the same list of numbers like this:</p>
+
+<pre><code class="python">
+numbers = range(10)
+</code></pre>
+
+        <p>This creates a list of numbers for you that starts at <code>0</code> and goes up until (but not including) <code>10</code>.</p>
+
+        <p>You could assign this list to a variable like <code>numbers</code> as in the example above, and then loop through each number in the list of numbers, but it is more common to just put the <code>range</code> code right in your for loop like this:</p>
+
+<pre><code class="python">
+for number in range(10):
+    print(number)
+</code></pre>
+
+        <p>The output of this code is:</p>
+
+<pre><code class="plaintext">
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+</code></pre>
+
+        <aside class="stay-middle"><heading>Hint from Instructor:</heading>
+            <p>In programming languages we usually start counting at 0 instead of 1. There are reasons for this, but more than anything, it's just something you'll have to get use to.</p>
+        </aside>
+
+        <p>The <code>range</code> function gives you other options like starting at a different number, or counting by 3's, or even going backwards. In all of these cases, the idea of looping through the values is the same. You start with the first one and then continue on, one by one, through the list.</p>
+
+        <p>To start with a different number, you provide two values to the <code>range</code> function. If you provide two numbers, it will start with the first one and continue up until (but not including) the second one.</p>
+
+        <p>If you provide three values to the <code>range</code> function, it will use the third number as the "step size" or in other words the number to count by.</p>
+
+<pre><code class="python">
+# This loop will start with 100, and go up to, but not including 200
+for i in range(100, 200):
+    print(i)
+
+# This loop will do the same thing, but this time, it will count by 10's
+for i in range(100, 200, 10):
+    print(i)
+</code></pre>
+
+       
+        <h3>Loops within loops</h3>
+        <p>A loop will blindly repeat any code that is in its body. That code could include if statement, mathematics, new variable definitions, or anything else&mdash;including other loops!</p>
+
+        <p>The following example displays the numbers 0-4:</p>
+
+<pre><code class="python">
+for i in range(5):
+    print(i)
+</code></pre>
+
+        <p>Output:</p>
+<pre><code class="plaintext">
+0
+1
+2
+3
+4
+</code></pre>
+
+        <p>We can add a second, inner loop, that for each one of those displays the numbers 10-12 (with two <code>-</code> characters in front to make it easier to visualize).</p>
+
+
+<pre><code class="python">
+for i in range(5):
+    print(i)
+    for j in range(10, 13):
+        print(f"--{j}")
+</code></pre>
+
+        <p>Output:</p>
+<pre><code class="plaintext">
+0
+--10
+--11
+--12
+1
+--10
+--11
+--12
+2
+--10
+--11
+--12
+3
+--10
+--11
+--12
+4
+--10
+--11
+--12
+</code></pre>
+
+        <p>Notice how the inner loop is run every time the outer loop displays it's number. Inner loops can be very helpful in iterating through a two-dimensional structure, such as the pixels in an image.</p>
+
+        <aside class="stay-middle"><heading>Hint from Instructor:</heading>
+            <p>While we generally prefer variable names that are more descriptive than a single letter, if the variable will only be used for counting in a simple loop it is considered standard to use <code>i</code>. Then, if you have an inner loop, you use <code>j</code>, and a third inner loop would be <code>k</code>. If you have more than three loops you should consider if there is a simpler way to accomplish your task, and if there really isn't, you should at least move to more descriptive variable names at that point.</p>
+            
+        </aside>
+
+        <h3>Looping Through Strings</h3>
+        <p>You can iterate through each letter of a string using either style of <code>for</code>-loop. For example, you can loop through each letter one at a time with the following code:</p>
+
+<pre><code class="python">
+first_name = "Brigham"
+for letter in first_name:
+    print(f"The letter is: {letter}")
+</code></pre>
+
+        <p>The output of this code is:</p>
+
+<pre><code class="plaintext">
+The letter is: B
+The letter is: r
+The letter is: i
+The letter is: g
+The letter is: h
+The letter is: a
+The letter is: m
+</code></pre>
+        
+        <p>Just as before, there is nothing special about the variable name <code>letter</code>, any name could have been used, but the choice of <code>letter</code> helps us keep the code nice and easy to read.</p>
+
+    <h2>Accessing Letters by Position</h2>
+        <p>Sometimes you need to access a letter by its position (or index) in a string. In other words, you might want to know the third or seventh letter in a string. This will be useful when comparing letters at the same place in two strings, such is in your project for this lesson.</p>
+
+        <p>You can access a specific letter in a string by using the square brackets <code>[]</code>, such as <code>word[3]</code> or <code>word[12]</code>. But be aware that that the count starts at 0, so you will use <code>3</code> to get the <em>fourth</em> letter (not the third letter). The following example gets the fourth letter of the name:</p>
+
+<pre><code class="python">
+first_name = "Brigham"
+
+fourth_letter = first_name[3] # Notice, using 3 instead of 4
+print(fourth_letter) # outputs a 'g' on the screen
+</code></pre>
+        <h2>Iterating through each letter using an index</h2>
+        <p>In the previous sections you learned how to iterate through each letter in a string, but this only gave you access to the letter but not the index of that letter. In many cases, this is sufficient. However, in other cases you need to know both the letter and its index. (For example, in your project you need to know the letter and also check its position in another word.)</p>
+
+        <p>In this case, rather than looping through letters, you can loop through the index numbers. If you knew the length of the word, you could do this as follows:</p>
+
+<pre><code class="python">
+word = "book"
+number_of_letters = 4
+
+for index in range(number_of_letters):
+    print(index)
+</code></pre>
+
+        <p>This code will output the following:</p>
+<pre><code class="plaintext">
+0
+1
+2
+3
+</code></pre>
+
+        <p>Then, you can use the square brackets to access the letter at that index as follows:</p>
+<pre><code class="python">
+word = "book"
+number_of_letters = 4
+
+for index in range(number_of_letters):
+    letter = word[index]
+    print(f"Index: {index} Letter: {letter}")
+</code></pre>
+
+<p>This code will output the following:</p>
+<pre><code class="plaintext">
+Index: 0 Letter: b
+Index: 1 Letter: o
+Index: 2 Letter: o
+Index: 3 Letter: k
+</code></pre>
+        <p>With this example, you have access to both the letter and the index at each step of the loop.</p>
+
+        <h3>Finding the String Length</h3>
+        <p>The previous example assumed the number of letters, or <em>length</em> of the string, would always be 4, but this will not work if the string has more or fewer letters. Instead of typing the 4 directly, you can let the computer find the length by using the <code>len</code> function. The following code shows how to use <code>len</code> to get the length of a string:</p>
+
+
+<pre><code class="python">
+dog_name = input("What is your dog's name? ")
+letter_count = len(dog_name)
+
+print(f"Your dog's name has {letter_count} letters")
+</code></pre>
+
+        <p>The output of this code could be:</p>
+
+<pre><code class="plaintext">
+What is your dog's name? Rover
+Your dog's name has 5 letters
+</code></pre>
+
+        <p>Combining the <code>len</code> function with the earlier loop is very powerful, because now you can iterate through the indexes and letters of strings of any length as follows:</p>
+
+<pre><code class="python">
+word = "book"
+number_of_letters = len(word) # Notice this can now work for any string
+
+for index in range(number_of_letters):
+    letter = word[index]
+    print(f"Index: {index} Letter: {letter}")
+</code></pre>
+
+<p>This code will output the following:</p>
+<pre><code class="plaintext">
+Index: 0 Letter: b
+Index: 1 Letter: o
+Index: 2 Letter: o
+Index: 3 Letter: k
+</code></pre>        
+
+<h2>Lists</h2>
+<p>Many of the examples you see with <code>for</code> loops often iterate through a list of items, including numbers in a list, or letters in a string. This naturally extends to working with other properties of lists, such as finding the length of the word or the position of the letter.</p>
+
+<p>This lesson introduces some of these concepts, but please be aware that the next lesson focuses entirely on working with lists. So, while you'll start to use lists a little bit now, you will get much more practice and learn the details even better as you continue on to the next lesson.</p>
+
+
+        <h2>(Optional) Python Enumerate</h2>
+        <p>Using a for loop and the length of the string is a standard way to access both the index and the letter. However, Python also has a way to access both of these variables directly using a special function called <code>enumerate</code> as shown in the following example:</p>
+
+<pre><code class="python">
+first_name = "Brigham"
+
+# Notice by using enumerate, we specify both i and letter
+for i, letter in enumerate(first_name):
+    print(f"The letter {letter} is at position {i}")
+</code></pre>
+
+        <p>The output of this code is:</p>
+
+<pre><code class="plaintext">
+The letter B is at position 0
+The letter r is at position 1
+The letter i is at position 2
+The letter g is at position 3
+The letter h is at position 4
+The letter a is at position 5
+The letter m is at position 6
+</code></pre>
+
+        <p>This is a little different than the standard <code>for</code> loop, because it returns two variables. This function is not supported in many languages, but it is available in Python and you are welcome to use it in your programs if you would like.</p>
+
+
+    </article>
+
+    <script src="../site/js/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

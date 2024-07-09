@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../site/style.css" />
+    <title>CSE 110 - Course Materials</title>
+</head>
+<body>
+    <header id="courseTitle">
+        <span class="icon-byui-logo"></span>
+        <h1>CSE 110 | Programming Building Blocks</h1>
+    </header>
+    <article>
+        <h1>03 Prepare: Preparation Material</h1>
+
+        <h2>Overview</h2>
+        <p>In the previous lesson, you learned how to store words in variables and display them later in the program. In this lesson, you will learn how to work with numbers as well, including computing mathematical formulas and other types of expressions, or combinations of variables and operations.</p>
+        
+        <p>For many types of programmers, working through calculations and manipulating numeric data is the primary reason they write programs. For example, scientists today use computers to simulate complex interactions that would be too difficult to work out by hand.</p>
+
+        <h2>Preparation Material</h2>
+        <h3>Data Types</h3>
+        <p>To this point, you have been working with a type of data called <em>strings</em>, which can be sequences of any kind of characters (letters, numbers, symbols, spaces, etc.), such as <code>"The book of: 1 Nephi"</code>, <code>"yellow puppy"</code>, or <code>"byui-cse.github.io/cse110-course"</code>.</p>
+        
+        <p>A sequence of numbers, such as <code>"48212"</code>, can be converted to a numeric data type and stored internally as a <em>number</em>; otherwise, the computer doesn’t distinguish numbers from a sequence of letters. Once you have converted the string to a number, you can use it in mathematical formulas or expressions.</p>
+
+        <p>Please watch the following videos for more information:</p>
+
+        <ul>
+            <li><p><a href="https://www.youtube.com/watch?v=5yhn0MFLcu8&list=PLlrxD0HtieHhS8VzuMCfQD4uJ9yne1mE6&index=13" target="_blank">Numeric Data Types</a> (6 mins)</p></li>
+            <li><p><a href="https://www.youtube.com/watch?v=T1j2tfZK7OI&list=PLlrxD0HtieHhS8VzuMCfQD4uJ9yne1mE6&index=14" target="_blank">Demo: Numbers</a> (6 mins)</p></li>
+
+            <!-- <li><p><a href="" target="_blank"></a> ( mins)</p></li>
+            <li><p><a href="" target="_blank"></a> ( mins)</p></li> -->
+
+        </ul>
+
+        <h3>Using Different Data Types</h3>
+        <p>As shown above, when data is stored in a variable, the computer treats it as a certain data type (such as a string or an integer). You have to be conscious of these different data types when you want to mix them together, such as when you want to display a number alongside the text of a string.</p>
+
+        <p>The easiest way to display numbers alongside text, is to use a format string:</p>
+
+<pre><code class="python">
+number = 7
+print(f"The number is {number}.")
+</code></pre>
+
+        <p>This is simple and works well, and is the preferred way to display a number in your print statement alongside text. But in order to properly use different data types, you'll need a little deeper understanding of them as well as how operators like the plus sign work with them.</p>
+
+        <h3>Operators and Different Data Types</h3>
+
+        <p>Consider the plus operator <code>+</code>. When you add two strings, it glues them together, one right after the other (the technical term for this is that it <em>concatenates</em> them):</p>
+
+<pre><code class="python">
+color = 'blue'
+animal = 'horse'
+
+# You can add, or concatenate, two strings together with +:
+print(color + animal)
+# This displays: bluehorse
+
+# You can add many strings together, whether the strings are variables or directly in
+# the quotation marks:
+print(color + ' ' + animal + '!')
+# This displays: blue horse!
+
+# You can also save the result into a new string variable:
+combined_words = color + ' ' + animal + '!'
+print(combined_words)
+</code></pre>
+
+        <p>On the other hand, if the data type of the variables is integer or floating point, the <code>+</code> operator actually performs the mathematical addition:</p>
+
+<pre><code class="python">
+boys_count = 10
+girls_count = 12
+
+# Add two numbers together using the + operator:
+print(boys_count + girls_count)
+# This displays: 22
+
+# You can save the result in a new variable to use later:
+total_count = boys_count + girls_count
+print(total_count)
+</code></pre>
+
+        <h3>Mixing Strings and Numbers</h3>
+
+        <p>A potential problem arises if you try to mix strings and numeric data types together. For example, trying to add a string to an integer produces an error:</p>
+
+<pre><code class="python">
+apple_count = 5
+
+# Error on this line... You can't add strings and integers together!
+print("You have " + apple_count + " apples") # ERROR!
+</code></pre>
+        
+        <p>The computer doesn't know how to add strings to numbers, which causes an error. In this case, what you want is for the computer to treat the number stored in the <code>apple_count</code> variable as a string instead of a number. It might seem obvious to you that this is the desired behavior, but the computer doesn't try to guess what you want, you must explicitly tell it when you want it to convert one type of data to another.</p>
+
+        <p>Converting data from one type to another is called type-casting, or "casting." That's just a fancy way of saying "treat it like a number please." To convert data to an integer, you put "int" before it, and then wrap it in parentheses, like this: <code>int(your_data_here)</code> . The same is true for converting it to a floating point number with the term <code>float()</code> or to a string with <code>str()</code> and so forth.</p>
+
+        <p>For example:</p>
+
+<pre><code class="python">
+# This creates a new integer variable with the value of 10
+# There is nothing magical about the "_num" in the variable name, it will just
+# help us keep track of it
+length_num = 50
+width_num = 10
+
+# If you add the numbers together, you would get the result you expect:
+print(length_num + width_num) # This displays: 60
+
+# You can convert the values to the strings "50" and "10" like this:
+length_string = str(length_num)
+width_string = str(width_num)
+
+# The computer now thinks of these variable as two characters, the digit 5 followed
+# by the digit 0, and the digit 1 followed by the digit 0.
+
+# If you try to add the two strings together, it will concatenate them, or display
+# one after the other:
+print(length_string + width_string) # This displays: 5010
+</code></pre>
+
+        <p>Whenever you get input from the user using <code>input</code>, it will be a string by default:</p>
+
+<pre><code class="python">
+quantity_from_user = input("How many items do you have? ")
+
+# The variable quantity_from_user is a string.
+# To convert it to an integer you use the int(...) notation:
+quantity_number = int(quantity_from_user)
+
+# Because the quantity_number variable is an integer you can do math with it:
+double_number = quantity_number * 2
+
+# If you want to use these values in strings, you CANNOT just add them, you first
+# have to convert them to a string:
+
+# WRONG:
+print("Twice as many is: " + double_number)
+
+# Right:
+double_string = str(double_number)
+print("Twice as many is: " + double_string)
+
+# You can also do this in one step:
+# Right:
+print("Twice as many is " + str(double_number))
+</code></pre>
+        
+        <p>Similar to the last example, you can combine the <code>input</code> and <code>int</code> commands into one line:</p>
+
+<pre><code class="python">
+# Using two lines:
+people_string = input("How many people are in the room? ")
+people_number = int(people_string)
+
+# Using one line:
+people_number = int(input("How many people are in the room? "))
+
+# The same works for floating point numbers:
+length_number = float(input("What is the length? "))
+</code></pre>
+    
+<aside class="stay-middle"><heading>Hint from Instructor:</heading>
+    <p>In the examples on this page, we used variables like <code>quantity_string</code> and <code>quantity_number</code> to try to illustrate the data types of each variable, but when you write your code, you don't need to include the <code>_string</code> or <code>_number</code> parts. You should use variable names that are short and to the point such as: <code>quantity</code>, <code>apples</code>, <code>length</code>, etc.</p>
+</aside>
+
+        <h3>Expressions and Mathematical Operations</h3>
+        <p>Once you have numeric values stored in variables, you can perform a variety of complex mathematical operations. The following are common mathematical operators in Python:</p>
+
+<table class="code-examples">
+    <thead>
+        <tr>
+            <td>Operator</td>
+            <td>Symbol</td>
+            <td>Example</td>
+            <td>Result</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><p>Add</p></td>
+            <td><p><code>+</code></p></td>
+            <td><p><code>3 + 4</code></p></td>
+            <td><p><code>7</code></p></td>
+        </tr>
+        <tr>
+            <td><p>Subtract</p></td>
+            <td><p><code>-</code></p></td>
+            <td><p><code>3 - 4</code></p></td>
+            <td><p><code>-1</code></p></td>
+        </tr>
+        <tr>
+            <td><p>Multiply</p></td>
+            <td><p><code>*</code></p></td>
+            <td><p><code>3 * 4</code></p></td>
+            <td><p><code>12</code></p></td>
+        </tr>
+        <tr>
+            <td><p>Divide</p></td>
+            <td><p><code>/</code></p></td>
+            <td><p><code>15 / 4</code></p></td>
+            <td><p><code>3.75</code></p></td>
+        </tr>
+        <tr>
+            <td><p>Divide and drop remainder</p></td>
+            <td><p><code>//</code></p></td>
+            <td><p><code>15 // 4</code></p></td>
+            <td><p><code>3</code></p></td>
+        </tr>
+        <tr>
+                <td><p>Remainder or Modulus<br>(Get the remainder that would result<br>
+                    from dividing the first number by the second one.)</p></td>
+                <td><p><code>%</code></p></td>
+                <td><p><code>25 % 7</code></p></td>
+                <td><p><code>4</code></p></td>
+            </tr>
+            <tr>
+            <td><p>Exponent<br>(To the power of)</p></td>
+            <td><p><code>**</code></p></td>
+            <td><p><code>3 ** 4</code></p></td>
+            <td><p><code>81</code></p></td>
+        </tr>
+    </tbody>
+</table>
+
+        <p>These operators follow standard mathematical orders of operation (where <code>*</code> happens before <code>+</code>), but you can force it to evaluate using parentheses. For example, <code>(3 + 4) * 2</code> will perform the addition first, and then multiple the result by 2.</p>
+
+    </article>
+
+    <script src="../site/js/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
